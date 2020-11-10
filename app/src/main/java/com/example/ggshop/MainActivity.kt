@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.user_registration.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var handler:DatabaseHelper
+    private lateinit var handler:DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         save.setOnContextClickListener {
-            handler.insertUserData(name.text.toString(),email.text.toString().password_register.text.toString())
+            handler.insertUserData(
+                name = name.text.toString()
+            )
+
+
+
         }
     }
 
